@@ -25,7 +25,7 @@
 .header__navbar-item,
 .header__navbar-item-link {
   display: inline-block;
-  font-size: 1.1rem;
+  font-size: 1.1 rem;
   color: var(--white-color);
   font-weight: 300;
   text-decoration: none;
@@ -116,8 +116,30 @@
   background-color: var(--white-color);
   cursor: default;
   transform: origin calc(100% -20px) top;
-  animation: headerNotifyGrowth ease-in 0.18s;
-  display: none;
+  animation: headerNotifyGrowth ease-in 0.2s;
+  -webkit-animation: header;
+  will-change: opacity ,transform;
+  display: none; 
+}
+.header__notify::before{
+  content:"";
+  border-width: 20px 30px;
+  border:20px solid;
+  border-color: transparent transparent var(--white-color) transparent;
+  position: absolute;
+  right: 9px;
+  top:-30px;
+}
+.header__notify::after{
+  content:"";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: -16px;
+  width: 90px;
+  height: 20px;
+
+
 }
 @keyframes headerNotifyGrowth {
   from{
